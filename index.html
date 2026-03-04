@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>André Francisco | CEO M.Assistance</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="card">
+        <div class="logo-container">
+            <!-- Substitua pelo logo real: logo-massistance.png -->
+            <img src="M.ASSISTANCE - LOGO HORIZONTAL - GRADIENTE - LARANJA.png" alt="M.Assistance Logo" class="company-logo">
+        </div>
+
+        <div class="header">
+            <!-- Substitua pela foto real: andre-francisco.jpg -->
+            <img src="Andre Francisco - M.Assistance.jpg" alt="André Francisco" class="profile-img">
+            <h1>André Francisco</h1>
+            <p class="job-title">CEO</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="info-section">
+                <span class="info-label">Mobile Phone</span>
+                <a href="tel:+351967876850" class="info-content">(+351) 967 876 850</a>
+                <p class="info-sub">Chamada para rede móvel nacional</p>
+            </div>
+
+            <div class="info-section">
+                <span class="info-label">Email</span>
+                <a href="mailto:andre.francisco@m-assistance.com" class="info-content">andre.francisco@m-assistance.com</a>
+            </div>
+
+            <div class="separator"></div>
+
+            <div class="info-section">
+                <span class="info-label">Address</span>
+                <span class="info-content">Zona Industrial de Vagos, Lote 88<br>3840-385 - Vagos, Portugal</span>
+            </div>
+
+            <div class="info-section">
+                <span class="info-label">Telephone</span>
+                <a href="tel:+351234422435" class="info-content">(+351) 234 422 435</a>
+                <p class="info-sub">Chamada para rede fixa nacional</p>
+            </div>
+
+            <div class="info-section">
+                <span class="info-label">Website</span>
+                <a href="https://m-assistance.com" target="_blank" class="info-content">m-assistance.com</a>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <!-- Link para o LinkedIn do André Francisco -->
+            <a href="https://linkedin.com/in/andrefancisco" target="_blank" class="social-icon">
+                <i data-lucide="linkedin"></i>
+            </a>
+            <!-- Link para o WhatsApp direto -->
+            <a href="https://wa.me/351967876850" target="_blank" class="social-icon">
+                <i data-lucide="message-circle"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i data-lucide="instagram"></i>
+            </a>
+        </div>
+
+        <button class="save-btn" onclick="downloadVCard()">
+            <i data-lucide="user-plus"></i>
+            ADICIONAR CONTACTO
+        </button>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function downloadVCard() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:André Francisco
+ORG:M.Assistance
+TITLE:CEO
+TEL;TYPE=CELL:(+351) 967 876 850
+TEL;TYPE=WORK,VOICE:(+351) 234 422 435
+EMAIL:andre.francisco@m-assistance.com
+ADR;TYPE=WORK:;;Zona Industrial de Vagos, Lote 88;Vagos;;3840-385;Portugal
+URL:https://m-assistance.com
+END:VCARD`;
+
+            const blob = new Blob([vcard], { type: "text/vcard" });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Andre_Francisco_M-Assistance.vcf";
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
