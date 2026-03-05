@@ -81,12 +81,10 @@
             const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:André Francisco
-ORG:M.Assistance
-TITLE:CEO
-TEL;TYPE=CELL:(+351) 967 876 850
-TEL;TYPE=WORK,VOICE:(+351) 234 422 435
+TEL;TYPE=HOME,CELL:(+351) 967 876 850
+TEL;TYPE=HOME,VOICE:(+351) 234 422 435
 EMAIL:andre.francisco@m-assistance.com
-ADR;TYPE=WORK:;;Zona Industrial de Vagos, Lote 88;Vagos;;3840-385;Portugal
+ADR;TYPE=HOME:;;Zona Industrial de Vagos, Lote 88;Vagos;;3840-385;Portugal
 URL:https://m-assistance.com
 END:VCARD`;
 
@@ -94,7 +92,7 @@ END:VCARD`;
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.href = url;
-            a.download = "Andre_Francisco_M-Assistance.vcf";
+            a.download = "Andre_Francisco.vcf";
             a.click();
             window.URL.revokeObjectURL(url);
         }
